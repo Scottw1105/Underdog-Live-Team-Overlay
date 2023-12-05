@@ -22,7 +22,7 @@ This tool is most utilized by Users that are drafting multiple teams at the same
 
 2. Right click on the chrome extension icon and choose `Options`. A new tab will open with an input box. Enter your Underdog username in the box and click `Save`.
 
-![Download image](readme_img/settings.png)
+![Download image](readme_img/settings1.png)
 
 3. Enter as many drafts as you'd like.
 
