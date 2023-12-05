@@ -91,11 +91,24 @@
 
 // LIVE AREA // 
 
+
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function get_info() {
+
+async function get_username() {
+  // Retrieve the username from Chrome storage
+  return new Promise(resolve => {
+    chrome.storage.sync.get(['username'], function (data) {
+      const targetUsername = data.username;
+      resolve(targetUsername);
+    });
+  });
+}
+
+
+async function get_info(username) {
   await sleep(500);
   const entries = Array.from(document.querySelectorAll(".styles__draftingCell__pD1pn.styles__draftingCell__Q8fFL"));
   var entry_names = [];
@@ -122,13 +135,15 @@ async function get_info() {
 
       entry_names.push(temp_list);
     }
-    chrome.storage.sync.get(['username'], async function(data) {
-      const targetUsername = data.username;
-      console.log(targetUsername);
-      return targetUsername
-    });
-    //const targetUsername = 'THEWOOD1105';
-    const filtered_array = entry_names.filter(innerArray => innerArray[0] === targetUsername);
+
+    // chrome.storage.sync.get(['username'], async function(data) {
+    //   const targetUsername = data.username;
+    //   console.log(targetUsername);
+    //   return targetUsername
+    // });
+    // const targetUsername = username;
+    //console.log(username);
+    const filtered_array = entry_names.filter(innerArray => innerArray[0] === username);
     return filtered_array;
 }};
 
@@ -143,7 +158,13 @@ document.addEventListener("click", async function (event) {
   const specificDiv = event.target.closest(".styles__activeDraftCell__ZFLtW");
   if (specificDiv) {
     removeOverlay();
-    const display_array = await get_info();
+    
+    // Retrieve the username
+    let username = await get_username();
+    //let username = "THEWOOD1105";
+    console.log(username);
+    
+    const display_array = await get_info(username);
     console.log(display_array);
 
     const overlayContainer = document.createElement('div');
