@@ -31,8 +31,13 @@
   
   //       entry_names.push(temp_list);
   //     }
+  //     chrome.storage.sync.get(['username'], async function(data) {
+  //       const targetUsername = data.username;
+  //       console.log(targetUsername);
+  //       return targetUsername
+  //     });
   //     // const targetUsername = 'THEWOOD1105';
-  //     // const filtered_array = entry_names.filter(innerArray => innerArray[0] === targetUsername);
+  //     const filtered_array = entry_names.filter(innerArray => innerArray[0] === targetUsername);
   //     // return filtered_array;
   //     return entry_names;
   // }};
@@ -117,7 +122,12 @@ async function get_info() {
 
       entry_names.push(temp_list);
     }
-    const targetUsername = 'THEWOOD1105';
+    chrome.storage.sync.get(['username'], async function(data) {
+      const targetUsername = data.username;
+      console.log(targetUsername);
+      return targetUsername
+    });
+    //const targetUsername = 'THEWOOD1105';
     const filtered_array = entry_names.filter(innerArray => innerArray[0] === targetUsername);
     return filtered_array;
 }};
