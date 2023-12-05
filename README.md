@@ -20,34 +20,14 @@ This tool is most utilized by Users that are drafting multiple teams at the same
 
 1. Log into your Underdog account on `www.UnderdogFantasy.com`.
 
-2.
+2. Right click on the chrome extension icon and choose `Options`. A new tab will open with an input box. Enter your Underdog username in the box and click `Save`.
+
+![Download image](readme_img/settings.png)
 
 3. Enter as many drafts as you'd like.
 
-![Download image](readme_img/results_heading.png)
+4. Navigate to the `Active` page. You should see the drafts you've entered on the left hand side. Clicking on the draft box will bring up an overlay on the right hand side of that teams roster so far.
 
-3. Ensure `Drafts` is selected just below the heading.
+![Download image](readme_img/example_1.png)
 
-4. Choose the sport you'd like to extract the results for. (Currently only NBA is tested, and known to be working)
-
-![Download image](readme_img/results.png)
-
-5. Right click on the chrome extension icon and choose `Options`. A new tab will open with an input box.
-
-![Download image](readme_img/options_click.png)
-
-6. Enter the date you'd like to get the extract up until. This must be in the same format as it's seen on the website. Click `Save`. You'll see a notification that you're settings have been updated.
-
-Example:
-
-If I want to gather the results for the 11/30 and 11/29 from the screenshot below step 4, here's what I'd enter.
-
-![Download image](readme_img/settings.PNG)
-
-7. Navigate back to the tab with your results and left click the chrome extension icon. You'll notice your page is looping through the tournaments and dates you've requested.
-
-8. Once the process is finished a download box will appear, save the resulting CSV file wherever you'd like.
-
-Example of resulting CSV file:
-
-![Download image](readme_img/results_csv.PNG)
+![Download image](readme_img/example_2.png)
